@@ -11,9 +11,11 @@ namespace primeira_api.Controllers
     public class UsuarioController : ControllerBase
     {
         [HttpGet("ObterDataHoraAtual")]
-        public IActionResult ObterDatahora() {
+        public IActionResult ObterDatahora()
+        {
 
-            var obj = new {
+            var obj = new
+            {
                 Data = DateTime.Now.ToLongDateString(),
                 Hora = DateTime.Now.ToShortTimeString()
             };
@@ -22,10 +24,11 @@ namespace primeira_api.Controllers
         }
 
         [HttpGet("Apresentar/{nome}")]
-        public IActionResult Apresentar(string nome){
+        public IActionResult Apresentar(string nome)
+        {
 
             var mensagem = $"Olá {nome}, seja bem vindo!";
-            return Ok(new {mensagem});
+            return Ok(new { mensagem });
         }
     }
 }
